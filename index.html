@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nuclear Reaction Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="topbar">
+  <button data-mode="fusion" class="mode-btn">Fusion</button>
+  <button data-mode="fission" class="mode-btn">Fission</button>
+  
+  <button id="pause">Pause</button>
+  <button id="reset">Reset</button>
+
+  <!-- Fusion Controls -->
+  <span id="fusionControls" class="panel">
+    Temp: <input id="temp" type="range" min="0" max="500" value="120">
+    Add H <button id="addH">+</button>
+    Add D <button id="addD">+</button>
+    Add T <button id="addT">+</button>
+  </span>
+
+  <!-- Fission Controls -->
+  <span id="fissionControls" class="panel hidden">
+    U-235 <input id="u235" type="range" min="0" max="200" value="40">
+    U-238 <input id="u238" type="range" min="0" max="200" value="60">
+    Neutrons <input id="nFlux" type="range" min="0" max="100" value="5">
+  </span>
+</div>
+
+<canvas id="sim"></canvas>
+
+<script src="physics/constants.js"></script>
+<script src="physics/isotopes.js"></script>
+<script src="physics/reactions.js"></script>
+
+<script src="render.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
